@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<bool> v(3001,true);
+    
+    
+    v[0]=v[1]=0;
+    for(int i=2;i<=3000;i++){
+        if(v[i]){
+          for(int j=2*i;j<=3000;j=j+i){
+              v[j]=0;
+
+}}}
+     long long n,ans=0;
+    cin>>n;
+    
+    for(long long j = 6; j <= n ; j++){
+    int cnt=0;
+    for(long long i = 2; i <= j; i++){
+        if(v[i] && j%i==0)
+        {
+            cnt++;
+        }
+    }
+    if(cnt==2)ans++;
+    }
+    cout<<ans;
+
+    return 0;
+}
