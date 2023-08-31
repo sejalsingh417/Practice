@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    
+    ios::sync_with_stdio(NULL);
+    cin.tie(0);
+    cout.tie(0);
+    
+   long long int n;
+    cin>>n;
+    
+    vector<bool> prime(n+1, true);
+    int count=0;
+    vector<long int> ans;
+    
+    prime[0]=prime[1]=0;
+    for(int i=2;i<=n;i++){
+        if(prime[i]){
+            count++;
+            ans.push_back(i);
+            
+            for(int j=2*i;j<=n;j=j+i){
+                prime[j]=0;
+            }
+        }
+    }
+        cout<<count<<endl;
+        for(auto x:ans)cout<<x<<" ";
+        //cout<<ans<<" "<<endl;
+        return 0;
+    
+}
